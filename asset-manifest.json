@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/esg/static/css/main.8d59726a.css",
-    "main.js": "/esg/static/js/main.79f3f6e5.js",
+    "main.css": "/esg/static/css/main.a855a93e.css",
+    "main.js": "/esg/static/js/main.d92acba0.js",
     "static/js/787.078390b9.chunk.js": "/esg/static/js/787.078390b9.chunk.js",
     "static/media/silla.jpg": "/esg/static/media/silla.a2e84b29e1ce10ff8cd4.jpg",
     "static/media/rafael.jpg": "/esg/static/media/rafael.6a618d811f7c0f176f47.jpg",
@@ -20,12 +20,12 @@
     "static/media/color.png": "/esg/static/media/color.6441e63a57ccc5105bad.png",
     "static/media/bravoenergia.jpeg": "/esg/static/media/bravoenergia.7b820a255455df806afc.jpeg",
     "index.html": "/esg/index.html",
-    "main.8d59726a.css.map": "/esg/static/css/main.8d59726a.css.map",
-    "main.79f3f6e5.js.map": "/esg/static/js/main.79f3f6e5.js.map",
+    "main.a855a93e.css.map": "/esg/static/css/main.a855a93e.css.map",
+    "main.d92acba0.js.map": "/esg/static/js/main.d92acba0.js.map",
     "787.078390b9.chunk.js.map": "/esg/static/js/787.078390b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d59726a.css",
-    "static/js/main.79f3f6e5.js"
+    "static/css/main.a855a93e.css",
+    "static/js/main.d92acba0.js"
   ]
 }
