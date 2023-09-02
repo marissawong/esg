@@ -49,51 +49,36 @@ const time = [
   },
 ];
 
-export const Equipe: FC = () => {
+export const Team: FC = () => {
   return (
-    <Box id="equipe" sx={{ my: "10rem" }}>
-      <Box className={styles.teamContainer}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
-          <Box sx={{ fontSize: "3.5rem", fontWeight: 500 }}>equipe</Box>
-          <Box className={styles.subtitle}>
-            conheça nosso <span className={styles.highlight}>time</span> de
-            especialistas
-          </Box>
+    <Box id="equipe" className={styles.teamContainer}>
+      <Box className={styles.header}>
+        <Box className={styles.title}>equipe</Box>
+        <Box className={styles.subtitle}>
+          conheça nosso <span className={styles.highlight}>time</span> de
+          especialistas
         </Box>
-        {time.map((t) => (
-          <Box className={styles.person}>
+      </Box>
+      {time.map((t) => (
+        <Box className={styles.person}>
+          <Box className={styles.mainInfo}>
+            <img src={t.src} alt={t.name} />
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
+                flexDirection: "column",
+                ml: "1rem",
+                alignItems: "start",
               }}
             >
-              <img src={t.src} alt={t.name} />
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  ml: "1rem",
-                  alignItems: "start",
-                }}
-              >
-                <Box className={styles.name}>{t.name}</Box>
-                <Box className={styles.name}>{t.lastName}</Box>
-                <Box className={styles.personSubtitle}>{t.subtitle}</Box>
-              </Box>
+              <Box className={styles.name}>{t.name}</Box>
+              <Box className={styles.name}>{t.lastName}</Box>
+              <Box className={styles.personSubtitle}>{t.subtitle}</Box>
             </Box>
-            <Box className={styles.description}>{t.description}</Box>
           </Box>
-        ))}
-      </Box>
+          <Box className={styles.description}>{t.description}</Box>
+        </Box>
+      ))}
     </Box>
   );
 };

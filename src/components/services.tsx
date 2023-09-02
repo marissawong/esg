@@ -47,7 +47,7 @@ const services = [
   },
 ];
 
-export const Servicos: FC = () => {
+export const Services: FC = () => {
   return (
     <Section
       id="servicos"
@@ -62,9 +62,11 @@ export const Servicos: FC = () => {
       <Box className={styles.servicesContainer}>
         <Carousel
           value={services}
-          numVisible={Math.round(window.innerWidth / 500)}
+          numVisible={Math.round(window.innerWidth / 400)}
           numScroll={1}
           showIndicators={false}
+          autoplayInterval={10000}
+          circular
           itemTemplate={(s) => (
             <Box className={styles.service}>
               <Box

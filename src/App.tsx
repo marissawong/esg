@@ -2,10 +2,11 @@ import { Box } from "@mui/material";
 import "primereact/resources/primereact.min.css";
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { Clientes } from "./components/clientes";
-import { Equipe } from "./components/equipe";
+import { Clients } from "./components/clients";
+import { Contact } from "./components/contact";
 import { Header } from "./components/header";
-import { Servicos } from "./components/servicos";
+import { Services } from "./components/services";
+import { Team } from "./components/team";
 import "./styles/global.scss";
 
 function App() {
@@ -39,12 +40,14 @@ function App() {
               </Box>
             </Box>
           </Box>
-          <Box sx={{ px: "5rem" }}>
-            <Servicos />
-            <Clientes />
-            <Equipe />
+          <Box>
+            <Services />
+            <Clients />
+            <Team />
+            <Contact />
           </Box>
         </div>
+        <div className="footer">&copy; 2023 ESG Energia</div>
       </React.StrictMode>
     </div>
   );

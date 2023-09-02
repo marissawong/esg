@@ -9,28 +9,9 @@ export const Section: FC<{
   subtitle: ReactNode;
 }> = ({ id, children, title, subtitle }) => {
   return (
-    <Box
-      id={id}
-      sx={{
-        position: "relative",
-        px: "4rem",
-        py: "2rem",
-        mb: "4rem",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "2rem",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
-        <Box sx={{ fontSize: "3.5rem", fontWeight: 500 }}>{title}</Box>
+    <Box id={id} className={styles.section}>
+      <Box className={styles.header}>
+        <Box className={styles.title}>{title}</Box>
         <Box className={styles.subtitle}>{subtitle}</Box>
       </Box>
 

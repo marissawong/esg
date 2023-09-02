@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { Carousel } from "primereact/carousel";
 import { FC } from "react";
 import bidenergy from "./../assets/clients/bidenergy.jpeg";
 import bravoenergia from "./../assets/clients/bravoenergia.jpeg";
@@ -66,7 +67,7 @@ const depoimentos = [
   },
 ];
 
-export const Clientes: FC = () => {
+export const Clients: FC = () => {
   return (
     <Section
       id="clientes"
@@ -78,7 +79,7 @@ export const Clientes: FC = () => {
         </>
       }
     >
-      <Box className={styles.clientsContainer}>
+      <Box className={styles.clientsLogos}>
         <Box className={styles.clientsRow}>
           {clients
             .filter((c) => c.class === "first")
@@ -86,32 +87,33 @@ export const Clientes: FC = () => {
               <img className={styles[s.class]} src={s.src} alt={s.title} />
             ))}
         </Box>
-        {/* <Box className={styles.clientsRow}>
-          {clients
-            .filter((c) => c.class === "second")
-            .map((s) => (
-              <img className={styles[s.class]} src={s.src} alt={s.title} />
-            ))}
-        </Box> */}
       </Box>
 
-      <Box className={styles.depoimentosContainer}>
-        {depoimentos.map((d) => (
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Box
-              className={styles.depoimento}
-              sx={{ ".MuiTypography-root": { lineHeight: 0.9 } }}
-            >
-              <Typography
-                sx={{ fontSize: "5rem", fontWeight: 700, userSelect: "none" }}
+      <Box className={styles.quotes}>
+        <Carousel
+          value={depoimentos}
+          numVisible={Math.round(window.innerWidth / 500)}
+          numScroll={1}
+          showIndicators={false}
+          autoplayInterval={10000}
+          circular
+          itemTemplate={(d) => (
+            <Box className={styles.quoteBox}>
+              <Box
+                className={styles.quote}
+                sx={{ ".MuiTypography-root": { lineHeight: 0.9 } }}
               >
-                “
-              </Typography>
-              <Box className={styles.texto}>{d.description}</Box>
+                <Typography
+                  sx={{ fontSize: "5rem", fontWeight: 700, userSelect: "none" }}
+                >
+                  “
+                </Typography>
+                <Box className={styles.texto}>{d.description}</Box>
+              </Box>
+              <Box className={styles.empresa}>— {d.empresa}</Box>
             </Box>
-            <Box className={styles.empresa}>— {d.empresa}</Box>
-          </Box>
-        ))}
+          )}
+        />
       </Box>
     </Section>
   );
