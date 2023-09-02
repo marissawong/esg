@@ -1,16 +1,30 @@
 {
   "files": {
-    "main.css": "/esg/static/css/main.073c9b0a.css",
-    "main.js": "/esg/static/js/main.010c71fa.js",
+    "main.css": "/esg/static/css/main.814c45f8.css",
+    "main.js": "/esg/static/js/main.8b693525.js",
     "static/js/787.078390b9.chunk.js": "/esg/static/js/787.078390b9.chunk.js",
-    "static/media/logo.svg": "/esg/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/silla.jpg": "/esg/static/media/silla.a2e84b29e1ce10ff8cd4.jpg",
+    "static/media/rafael.jpg": "/esg/static/media/rafael.6a618d811f7c0f176f47.jpg",
+    "static/media/arthur.jpg": "/esg/static/media/arthur.370b88684ae429463939.jpg",
+    "static/media/fundo6.jpg": "/esg/static/media/fundo6.e6c6d1a9a3572ecd0550.jpg",
+    "static/media/servicos_3.png": "/esg/static/media/servicos_3.55ea9b57a390d92e6eee.png",
+    "static/media/servicos_2.webp": "/esg/static/media/servicos_2.e6a8a4b0384f649ca139.webp",
+    "static/media/tenbrasil.png": "/esg/static/media/tenbrasil.d24dd09af0c0f5389d7f.png",
+    "static/media/servicos_4.jpg": "/esg/static/media/servicos_4.e089b19963c6e1abbfe8.jpg",
+    "static/media/servicos_1.jpeg": "/esg/static/media/servicos_1.2ecb9377060d527607ad.jpeg",
+    "static/media/oceaneering.png": "/esg/static/media/oceaneering.b791a5f21121db2f22de.png",
+    "static/media/diego.jpeg": "/esg/static/media/diego.711d1574cfefea4786da.jpeg",
+    "static/media/logo_esg_negativo.png": "/esg/static/media/logo_esg_negativo.e54df55c4cde71822a4b.png",
+    "static/media/bidenergy.jpeg": "/esg/static/media/bidenergy.787a3f0605334514bd22.jpeg",
+    "static/media/climatempo.png": "/esg/static/media/climatempo.9e5e72cd13feb25238cd.png",
+    "static/media/bravoenergia.jpeg": "/esg/static/media/bravoenergia.7b820a255455df806afc.jpeg",
     "index.html": "/esg/index.html",
-    "main.073c9b0a.css.map": "/esg/static/css/main.073c9b0a.css.map",
-    "main.010c71fa.js.map": "/esg/static/js/main.010c71fa.js.map",
+    "main.814c45f8.css.map": "/esg/static/css/main.814c45f8.css.map",
+    "main.8b693525.js.map": "/esg/static/js/main.8b693525.js.map",
     "787.078390b9.chunk.js.map": "/esg/static/js/787.078390b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.010c71fa.js"
+    "static/css/main.814c45f8.css",
+    "static/js/main.8b693525.js"
   ]
 }
