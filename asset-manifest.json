@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/esg/static/css/main.d236c272.css",
+    "main.css": "/esg/static/css/main.2a48dfa4.css",
     "main.js": "/esg/static/js/main.8b693525.js",
     "static/js/787.078390b9.chunk.js": "/esg/static/js/787.078390b9.chunk.js",
     "static/media/silla.jpg": "/esg/static/media/silla.a2e84b29e1ce10ff8cd4.jpg",
@@ -19,12 +19,12 @@
     "static/media/climatempo.png": "/esg/static/media/climatempo.9e5e72cd13feb25238cd.png",
     "static/media/bravoenergia.jpeg": "/esg/static/media/bravoenergia.7b820a255455df806afc.jpeg",
     "index.html": "/esg/index.html",
-    "main.d236c272.css.map": "/esg/static/css/main.d236c272.css.map",
+    "main.2a48dfa4.css.map": "/esg/static/css/main.2a48dfa4.css.map",
     "main.8b693525.js.map": "/esg/static/js/main.8b693525.js.map",
     "787.078390b9.chunk.js.map": "/esg/static/js/787.078390b9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d236c272.css",
+    "static/css/main.2a48dfa4.css",
     "static/js/main.8b693525.js"
   ]
 }
