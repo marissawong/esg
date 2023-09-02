@@ -1,0 +1,157 @@
+@import "./variables.scss";
+
+* {
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $background-color;
+  color: white;
+  overflow-x: hidden;
+}
+
+.mainImage {
+  background-image: url("./../assets/fundo6.jpg");
+  background-size: contain;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+
+  @media (max-width: 1070px) {
+    background-position: top;
+    min-width: 960px;
+    min-height: 400px;
+    max-height: 720px;
+  }
+
+  @media (min-width: 1070px) {
+    background-position: 0% 50%;
+    min-width: 960px;
+    min-height: 550px;
+    max-height: 720px;
+  }
+}
+
+.overDiv {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba($background-color, 0.5) 0%,
+    rgba($background-color, 0.7) 40%,
+    rgba($background-color, 1) 100%
+  );
+  width: 100%;
+  height: 100vh;
+
+  .mainText {
+    font-size: 3rem;
+    font-weight: 500;
+    max-width: 50%;
+    text-align: center;
+
+    .highlight {
+      font-weight: 700;
+      color: $primary1;
+      font-style: italic;
+    }
+  }
+
+  @media (min-width: 1070px) {
+    min-height: 550px;
+    max-height: 720px;
+  }
+
+  @media (max-width: 1070px) {
+    min-height: 400px;
+    max-height: 720px;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: -500px;
+  width: 100%;
+  z-index: 999;
+}
+
+.header {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 11rem;
+  z-index: 1000;
+  position: sticky;
+  // transition: linear background-image 1.2s;
+
+  &.scrolled {
+    background: linear-gradient(
+      180deg,
+      rgba($background-color, 1) 0%,
+      rgba($background-color, 0) 100%
+    );
+  }
+
+  .headerContent {
+    position: absolute;
+    width: calc(100% - 8rem);
+    top: 0px;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .buttons {
+      .MuiButton-root {
+        padding: 0.5rem 1rem;
+        border-radius: 1.5rem;
+        text-transform: lowercase;
+        font-size: 1.2rem;
+        color: white;
+        font-weight: 500;
+        font-family: "Work Sans", sans-serif;
+        transition: linear all 0.5s;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+      .main {
+        background-color: rgba($primary1, 0.5);
+        color: white;
+      }
+    }
+  }
+
+  .logo {
+    width: 150px;
+    height: 87px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: ease-out all 1.2s;
+
+    &.white {
+      background-image: url("./../assets/logo_esg_negativo.png");
+    }
+
+    &.scrolled {
+      background-image: url("./../assets/logo_esg_negativo.png");
+    }
+  }
+}

@@ -1,24 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/material";
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Clientes } from "./components/clientes";
+import { Equipe } from "./components/equipe";
+import { Header } from "./components/header";
+import { Servicos } from "./components/servicos";
+import "./styles/global.scss";
 
 function App() {
+  const [customClass, setCustomClass] = useState("");
+
+  useEffect(() => {
+    // window.addEventListener("scroll", () => {
+    //   const overDiv =
+    //     document.getElementsByClassName("overDiv")[0]?.clientHeight;
+    //   let customClass = "";
+    //   if (window.scrollY > 350) {
+    //     customClass += "sticky";
+    //   } else {
+    //     customClass += "";
+    //   }
+    //   setCustomClass(() => customClass);
+    // });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div>
+        <Box sx={{ minHeight: "650px" }} className={customClass}>
+          <Box className="mainImage"></Box>
+          <Box className="overDiv">
+            <Box className="mainText">
+              especialistas em redução de custos com{" "}
+              <span className="highlight">energia</span>
+            </Box>
+          </Box>
+        </Box>
+        <Box sx={{ px: "10rem" }}>
+          <Servicos />
+          <Clientes />
+          <Equipe />
+        </Box>
+      </div>
     </div>
   );
 }
