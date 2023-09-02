@@ -24,15 +24,18 @@ $user-pic-width: 180px;
 }
 
 .servicesContainer {
-  display: flex;
   width: 100%;
-  gap: 3rem;
   margin-top: 2rem;
   justify-content: center;
 
+  button {
+    background-color: white;
+    border-radius: 3rem;
+    padding: 0.5rem;
+  }
+
   .service {
-    display: flex;
-    width: $card-width;
+    margin: 0 0.5rem;
     flex-direction: column;
     background-color: $card-background-color;
     border-radius: 1rem;
@@ -41,16 +44,26 @@ $user-pic-width: 180px;
     box-shadow: 0px 0px 36px -15px rgb(57 57 57 / 64%);
     height: auto;
 
+    .image {
+      border-radius: 1rem 1rem 0 0;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: $card-width;
+    }
+
     .overDiv {
-      position: absolute;
-      //   top: 0;
+      position: relative;
+      top: -320px;
+      margin-bottom: -320px;
       background: linear-gradient(
         180deg,
         rgba($card-background-color, 0.2) 0%,
         rgba($card-background-color, 0.9) 70%,
         rgba($card-background-color, 1) 100%
       );
-      width: $card-width;
+      width: 100%;
       height: $card-width;
       align-items: end;
       display: flex;
@@ -62,15 +75,6 @@ $user-pic-width: 180px;
         font-size: 1.5rem;
         margin: 0 1rem;
       }
-    }
-
-    .image {
-      border-radius: 1rem 1rem 0 0;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      width: $card-width;
-      height: $card-width;
     }
 
     .text {

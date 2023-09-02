@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
-import { useEffect, useState } from "react";
+import "primereact/resources/primereact.min.css";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Clientes } from "./components/clientes";
 import { Equipe } from "./components/equipe";
@@ -27,22 +28,24 @@ function App() {
   return (
     <div>
       <Header />
-      <div>
-        <Box sx={{ minHeight: "650px" }} className={customClass}>
-          <Box className="mainImage"></Box>
-          <Box className="overDiv">
-            <Box className="mainText">
-              especialistas em redução de custos com{" "}
-              <span className="highlight">energia</span>
+      <React.StrictMode>
+        <div>
+          <Box sx={{ minHeight: "650px" }} className={customClass}>
+            <Box className="mainImage"></Box>
+            <Box className="overDiv">
+              <Box className="mainText">
+                especialistas em redução de custos com{" "}
+                <span className="highlight">energia</span>
+              </Box>
             </Box>
           </Box>
-        </Box>
-        <Box sx={{ px: "10rem" }}>
-          <Servicos />
-          <Clientes />
-          <Equipe />
-        </Box>
-      </div>
+          <Box sx={{ px: "5rem" }}>
+            <Servicos />
+            <Clientes />
+            <Equipe />
+          </Box>
+        </div>
+      </React.StrictMode>
     </div>
   );
 }
