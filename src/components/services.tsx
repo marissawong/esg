@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Carousel } from "primereact/carousel";
-import { FC } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import card1 from "./../assets/servicos_1.jpeg";
 import card2 from "./../assets/servicos_2.webp";
 import card3 from "./../assets/servicos_3.png";
@@ -48,6 +48,31 @@ const services = [
 ];
 
 export const Services: FC = () => {
+  const [viewInit, setViewInit] = useState(false);
+  const [numVisible, setNumVisible] = useState<number>();
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const calculatedCards = Math.floor(window.innerWidth / 400);
+    setNumVisible(calculatedCards < 1 ? 1 : calculatedCards);
+  }, []);
+
+  useEffect(() => {
+    if (numVisible) setViewInit(true);
+  }, [numVisible]);
+
+  useEffect(() => {
+    const element = document.getElementById("servicos");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY * 2 >= element?.offsetTop!) {
+        setIsIntersecting(true);
+      } else {
+        setIsIntersecting(false);
+      }
+    });
+  }, []);
+
   return (
     <Section
       id="servicos"
@@ -59,29 +84,35 @@ export const Services: FC = () => {
         </>
       }
     >
-      <Box className={styles.servicesContainer}>
-        <Carousel
-          value={services}
-          numVisible={Math.round(window.innerWidth / 400)}
-          numScroll={1}
-          showIndicators={false}
-          autoplayInterval={10000}
-          circular
-          itemTemplate={(s) => (
-            <Box className={styles.service}>
-              <Box
-                className={styles.image}
-                sx={{ backgroundImage: `url(${s.src})` }}
-              ></Box>
-              <Box className={styles.overDiv}>
-                <span className={styles.title}>{s.title}</span>
+      <Box
+        ref={ref}
+        className={`${styles.servicesContainer} ${
+          isIntersecting ? styles.slideIn : ""
+        }`}
+      >
+        {viewInit && (
+          <Carousel
+            value={services}
+            numVisible={4}
+            numScroll={1}
+            showIndicators={false}
+            // autoplayInterval={10000}
+            itemTemplate={(s) => (
+              <Box className={styles.service}>
+                <Box
+                  className={styles.image}
+                  sx={{ backgroundImage: `url(${s.src})` }}
+                ></Box>
+                <Box className={styles.overDiv}>
+                  <span className={styles.title}>{s.title}</span>
+                </Box>
+                <Box className={styles.text}>
+                  <Box className={styles.description}>{s.description}</Box>
+                </Box>
               </Box>
-              <Box className={styles.text}>
-                <Box className={styles.description}>{s.description}</Box>
-              </Box>
-            </Box>
-          )}
-        />
+            )}
+          />
+        )}
       </Box>
     </Section>
   );

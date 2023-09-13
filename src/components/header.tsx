@@ -37,7 +37,10 @@ export const Header: FC = () => {
       {/* <Box className="headerBackground"></Box>
       <Box className="headerOverDiv"></Box> */}
       <Box className="headerContent">
-        <Box className={`logo ${customClass}`}></Box>
+        <Box
+          className={`logo ${customClass}`}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        ></Box>
         <Box
           className="buttons"
           sx={{

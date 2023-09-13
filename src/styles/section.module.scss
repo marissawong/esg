@@ -53,6 +53,9 @@ $user-pic-width: 180px;
   width: 100%;
   margin-top: 2rem;
   justify-content: center;
+  // transform: translateY(100%);
+  // opacity: 0;
+  // transition: linear all 1s;
 
   button {
     background-color: white;
@@ -119,16 +122,19 @@ $user-pic-width: 180px;
   border-radius: 2rem;
   margin: 0 0.5rem;
   overflow: hidden;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
+  width: fit-content;
 
   .clientsRow {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    gap: 3rem;
 
     img.first {
-      width: 30%;
+      width: 25%;
+      max-width: 250px;
     }
   }
 }
@@ -165,13 +171,19 @@ $user-pic-width: 180px;
 
       .texto {
         font-family: "Bitter", serif;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
     }
 
-    .empresa {
+    .autor {
       margin-top: 1rem;
       align-self: end;
+    }
+
+    .empresa {
+      align-self: end;
+      font-weight: 600;
+      color: $primary1;
     }
   }
 }
@@ -323,7 +335,7 @@ $user-pic-width: 180px;
           background-color: $primary1;
           color: white;
           border-radius: 5rem;
-          padding: 0.3rem 0.5rem;
+          padding: 0.3rem 0.7rem;
           align-items: center;
         }
 
@@ -351,7 +363,7 @@ $user-pic-width: 180px;
       }
 
       @media (min-width: 1600px) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
 
       @media (max-width: 1600px) {
@@ -371,3 +383,8 @@ $user-pic-width: 180px;
     }
   }
 }
+
+// .slideIn {
+//   transform: translateX(0) !important;
+//   opacity: 1 !important;
+// }

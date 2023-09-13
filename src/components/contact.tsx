@@ -1,38 +1,40 @@
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import { Box, IconButton, Link } from "@mui/material";
+import { Box, IconButton, Link, Stack } from "@mui/material";
 import { FC } from "react";
 import styles from "./../styles/section.module.scss";
 
-const networks = [
+export const networks = [
   {
-    url: "",
+    url: "https://api.whatsapp.com/send?phone=5521983505292&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20ESG%20Energia%A1!",
     name: "whatsapp",
-    label: "(xx) xxxxx-xxxx",
+    label: "(21) 98350-5292",
     icon: <WhatsAppIcon />,
+    shortchut: true,
   },
   {
-    url: "",
+    url: "https://www.linkedin.com/company/esg-energia",
     name: "linkedin",
-    label: "esgenergia",
+    label: "esg-energia",
     icon: <LinkedInIcon />,
   },
   {
-    url: "",
+    url: "mailto:contato@esgenergia.com",
     name: "e-mail",
-    label: "contato@esgenergia.com.br",
+    label: "contato@esgenergia.com",
     icon: <AlternateEmailIcon />,
+    copy: "contato@esgenergia.com",
+    shortchut: true,
   },
-  {
-    url: "",
-    name: "instagram",
-    label: "esgenergia",
-    icon: <InstagramIcon />,
-  },
+  // {
+  //   url: "",
+  //   name: "instagram",
+  //   label: "esgenergia",
+  //   icon: <InstagramIcon />,
+  // },
 ];
 
 export const Contact: FC = () => {
@@ -43,7 +45,7 @@ export const Contact: FC = () => {
           <Box className={styles.title}>fale conosco</Box>
           <Box className={styles.item}>
             <LocationOnIcon />
-            rua da esg energia, n. xx - cidade, rj
+            Rio de Janeiro | São Paulo | Florianópolis
           </Box>
           <Box className={styles.item}>
             <ScheduleIcon />
@@ -70,7 +72,10 @@ export const Contact: FC = () => {
 
                 {n.name}
               </Box>
-              <Link className={styles.label}>{n.label}</Link>
+              <Stack direction="row" gap={0} alignItems="center">
+                <Link className={styles.label}>{n.label}</Link>
+                {/* {n.copy && <ContentCopyIcon sx={{ fontSize: "1rem" }} />} */}
+              </Stack>
             </Box>
           ))}
         </Box>
