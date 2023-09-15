@@ -3,6 +3,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Box, Button, IconButton } from "@mui/material";
 import { Sidebar } from "primereact/sidebar";
 import { FC, useEffect, useState } from "react";
+import { networks } from "./contact";
 
 const menu = {
   servicos: "serviços",
@@ -49,7 +50,7 @@ export const Header: FC = () => {
           }}
         >
           {Object.keys(menu).map((m) => (
-            <Button onClick={() => scroll(m)}>
+            <Button key={`header_${m}`} onClick={() => scroll(m)}>
               {menu[m as keyof typeof menu]}
             </Button>
           ))}
@@ -58,12 +59,19 @@ export const Header: FC = () => {
           </Button>
         </Box>
         <Box className="drawer">
-          <IconButton
-            color="inherit"
-            edge="end"
-            onClick={() => setOpen(true)}
-            sx={open ? { display: "none" } : {}}
-          >
+          {networks
+            .filter((n) => n.shortchut)
+            .map((n) => (
+              <IconButton
+                key={`header_icon_${n.name}`}
+                color="inherit"
+                edge="end"
+                onClick={() => window.open(n.url, "_blank")}
+              >
+                {n.icon}
+              </IconButton>
+            ))}
+          <IconButton color="inherit" edge="end" onClick={() => setOpen(true)}>
             <MenuIcon />
           </IconButton>
         </Box>
@@ -88,6 +96,7 @@ export const Header: FC = () => {
           </Box>
           {Object.keys(menu).map((m) => (
             <Button
+              key={`drawer_${m}`}
               onClick={() => {
                 scroll(m);
                 setOpen(false);

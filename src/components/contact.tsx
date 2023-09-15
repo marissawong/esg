@@ -57,6 +57,7 @@ export const Contact: FC = () => {
         <Box className={styles.contactLinks}>
           {networks.map((n) => (
             <Box
+              key={`contato_footer_${n.name}`}
               className={styles.contactItem}
               onClick={() => window.open(n.url, "_blank")}
             >

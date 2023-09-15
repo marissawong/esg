@@ -66,9 +66,14 @@ export const Clients: FC = () => {
       <Box className={styles.clientsLogos}>
         <Box className={styles.clientsRow}>
           {clients.map(
-            (s) =>
+            (s, index) =>
               s.logo && (
-                <img className={styles.first} src={s.logo} alt={s.empresa} />
+                <img
+                  key={`client_${index}`}
+                  className={styles.first}
+                  src={s.logo}
+                  alt={s.empresa}
+                />
               )
           )}
         </Box>

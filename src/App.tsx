@@ -20,8 +20,7 @@ function App() {
           <Box className="mainImage"></Box>
           <Box className="overDiv">
             <Box className="mainText">
-              especialistas em redução de custos com{" "}
-              <span className="highlight">energia</span>
+              especialistas em <span className="highlight">energia</span>
             </Box>
           </Box>
         </Box>

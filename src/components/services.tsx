@@ -10,40 +10,40 @@ import { Section } from "./section";
 
 const services = [
   {
-    title: "serviço 1",
+    title: "gestão e consultoria completa no ACL",
     src: card1,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus.",
+      "Gestão completa de unidades consumidoras no Mercado Livre de Energia, desde a análise de viabilidade até a gestão mensal dos contratos.",
   },
   {
-    title: "serviço 2",
+    title: "abertura e estruturação de comercializadora",
     src: card2,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus.",
+      "Acompanhamento da abertura de uma comercializadora de energia, além de indicação de profissionais e treinamento com as melhores práticas do mercado.",
   },
   {
-    title: "serviço 3",
+    title: "avaliação de novas oportunidades",
     src: card3,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus.",
+      "Análise de negócios em energia, visando apoiar regulatoriamente as oportunidades geradas para os clientes.",
   },
   {
-    title: "serviço 4",
+    title: "treinamentos <br> corporativos",
     src: card4,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus.",
+      "Realização de treinamentos <i>in company</i> acerca dos assuntos mais relevantes abordados no mercado de energia.",
   },
   {
-    title: "serviço 5",
+    title: "desenvolvimento de ferramentas para gestão",
     src: card4,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus.",
+      "Elaboração de planilhas ou software de acordo com as necessidades específicas de cada projeto.",
   },
   {
-    title: "serviço 6",
+    title: "backoffice de gestoras e comercializadoras",
     src: card4,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus.",
+      "Gestão da área do backoffice das empresas de energia, com registros de contratos, organização de informações e acompanhamentos.",
   },
 ];
 
@@ -104,10 +104,17 @@ export const Services: FC = () => {
                   sx={{ backgroundImage: `url(${s.src})` }}
                 ></Box>
                 <Box className={styles.overDiv}>
-                  <span className={styles.title}>{s.title}</span>
+                  <span
+                    className={styles.title}
+                    dangerouslySetInnerHTML={{ __html: s.title }}
+                  ></span>
                 </Box>
                 <Box className={styles.text}>
-                  <Box className={styles.description}>{s.description}</Box>
+                  <Box className={styles.description}>
+                    <span
+                      dangerouslySetInnerHTML={{ __html: s.description }}
+                    ></span>
+                  </Box>
                 </Box>
               </Box>
             )}

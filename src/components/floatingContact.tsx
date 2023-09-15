@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import { FC, useEffect, useState } from "react";
 import { networks } from "./contact";
 
@@ -6,7 +6,6 @@ export const FloatingContact: FC = () => {
   const [className, setClassName] = useState("");
 
   const handleScroll = () => {
-    console.log("scroll");
     const contactSection = document.querySelector("#contato");
     const rect = contactSection?.getBoundingClientRect();
 
@@ -26,16 +25,21 @@ export const FloatingContact: FC = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
-    // return window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <Stack direction="column" className={`contactIcons ${className}`} gap={1}>
+    <Box className={`contactIcons ${className}`}>
       {networks
         .filter((n) => n.shortchut)
         .map((n) => (
-          <Box onClick={() => window.open(n.url, "_blank")}>{n.icon}</Box>
+          <Box
+            key={`contato_float_${n.name}`}
+            onClick={() => window.open(n.url, "_blank")}
+          >
+            {n.icon}
+          </Box>
         ))}
-    </Stack>
+    </Box>
   );
 };

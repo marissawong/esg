@@ -72,8 +72,8 @@ export const Team: FC = () => {
           especialistas
         </Box>
       </Box>
-      {time.map((t) => (
-        <Box className={styles.person}>
+      {time.map((t, index) => (
+        <Box key={`team_${index}`} className={styles.person}>
           <Box className={styles.mainInfo}>
             <img src={t.src} alt={t.name} />
             <Box
