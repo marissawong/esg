@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/esg/static/css/main.a08c8995.css",
-    "main.js": "/esg/static/js/main.8a54b44e.js",
+    "main.js": "/esg/static/js/main.910d3bb5.js",
     "static/js/787.078390b9.chunk.js": "/esg/static/js/787.078390b9.chunk.js",
     "static/media/silla.jpg": "/esg/static/media/silla.a2e84b29e1ce10ff8cd4.jpg",
     "static/media/rafael.jpg": "/esg/static/media/rafael.6a618d811f7c0f176f47.jpg",
@@ -18,11 +18,11 @@
     "static/media/nevienergia.png": "/esg/static/media/nevienergia.387866f45e4d680a2f92.png",
     "index.html": "/esg/index.html",
     "main.a08c8995.css.map": "/esg/static/css/main.a08c8995.css.map",
-    "main.8a54b44e.js.map": "/esg/static/js/main.8a54b44e.js.map",
+    "main.910d3bb5.js.map": "/esg/static/js/main.910d3bb5.js.map",
     "787.078390b9.chunk.js.map": "/esg/static/js/787.078390b9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a08c8995.css",
-    "static/js/main.8a54b44e.js"
+    "static/js/main.910d3bb5.js"
   ]
 }
