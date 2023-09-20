@@ -9,7 +9,7 @@ interface CustomCarouselProps extends CarouselProps {
 const breakpoints = [
   { breakpoint: 500, numVisible: 1, numScroll: 1 },
   { breakpoint: 1000, numVisible: 2, numScroll: 1 },
-  { breakpoint: 1300, numVisible: 3, numScroll: 1 },
+  { breakpoint: 1400, numVisible: 3, numScroll: 1 },
 ];
 
 const getWidth = () => {
@@ -20,8 +20,8 @@ const getWidth = () => {
     items = breakpoints.find((b) => b.breakpoint === 500)!.numVisible;
   } else if (windowWidth <= 1000) {
     items = breakpoints.find((b) => b.breakpoint === 1000)!.numVisible;
-  } else if (windowWidth <= 1300) {
-    items = breakpoints.find((b) => b.breakpoint === 1300)!.numVisible;
+  } else if (windowWidth <= 1400) {
+    items = breakpoints.find((b) => b.breakpoint === 1400)!.numVisible;
   } else {
     items = 4;
   }

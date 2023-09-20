@@ -4,6 +4,8 @@ import card1 from "./../assets/servicos_1.jpeg";
 import card2 from "./../assets/servicos_2.webp";
 import card3 from "./../assets/servicos_3.png";
 import card4 from "./../assets/servicos_4.jpg";
+import card5 from "./../assets/servicos_5.webp";
+import card6 from "./../assets/servicos_6.jpg";
 import styles from "./../styles/section.module.scss";
 import { CustomCarousel } from "./customCarousel";
 import { Section } from "./section";
@@ -29,13 +31,13 @@ const services = [
   },
   {
     title: "treinamentos <br> corporativos",
-    src: card4,
+    src: card6,
     description:
       "Realização de treinamentos <i>in company</i> acerca dos assuntos mais relevantes abordados no mercado de energia.",
   },
   {
     title: "desenvolvimento de ferramentas para gestão",
-    src: card4,
+    src: card5,
     description:
       "Elaboração de planilhas ou software de acordo com as necessidades específicas de cada projeto.",
   },
