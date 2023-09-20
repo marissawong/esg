@@ -1,12 +1,9 @@
 import { Box } from "@mui/material";
 // import "primereact/resources/primereact.min.css";
 import "./App.css";
-import { Clients } from "./components/clients";
-import { Contact } from "./components/contact";
 import { FloatingContact } from "./components/floatingContact";
 import { Header } from "./components/header";
-import { Services } from "./components/services";
-import { Team } from "./components/team";
+import { MainPage } from "./components/main";
 import "./styles/global.scss";
 import "./styles/primereact.css";
 
@@ -24,12 +21,7 @@ function App() {
             </Box>
           </Box>
         </Box>
-        <Box>
-          <Services />
-          <Clients />
-          <Team />
-          <Contact />
-        </Box>
+        <MainPage />
       </div>
       <div className="footer">&copy; 2023 ESG Energia</div>
     </div>

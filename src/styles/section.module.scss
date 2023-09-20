@@ -128,7 +128,7 @@ $user-pic-width: 180px;
   width: fit-content;
 
   .clientsRow {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     flex-direction: row;
@@ -137,7 +137,20 @@ $user-pic-width: 180px;
     overflow: hidden;
 
     img.first {
-      height: 50px;
+      width: 90%;
+      max-width: 150px;
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr 1fr;
+
+      img.first {
+        max-width: 150px;
+      }
+    }
+
+    @media (min-width: 500px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 }

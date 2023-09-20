@@ -1,11 +1,11 @@
 import { Box, Typography } from "@mui/material";
-import { Carousel } from "primereact/carousel";
 import { FC } from "react";
 import enecelenergia from "./../assets/clients/enecelenergia.png";
 import grupotriex from "./../assets/clients/grupotriex.png";
 import meritoenergia from "./../assets/clients/meritoenergia.png";
 import nevienergia from "./../assets/clients/nevienergia.png";
 import styles from "./../styles/section.module.scss";
+import { CustomCarousel } from "./customCarousel";
 import { Section } from "./section";
 
 const clients = [
@@ -79,31 +79,28 @@ export const Clients: FC = () => {
         </Box>
       </Box>
 
-      <Box className={styles.quotes}>
-        <Carousel
-          value={clients}
-          numVisible={4}
-          numScroll={1}
-          showIndicators={false}
-          itemTemplate={(d) => (
-            <Box className={styles.quoteBox}>
-              <Box
-                className={styles.quote}
-                sx={{ ".MuiTypography-root": { lineHeight: 0.9 } }}
+      <CustomCarousel
+        boxClassName={styles.quotes}
+        value={clients}
+        showIndicators={false}
+        itemTemplate={(d) => (
+          <Box className={styles.quoteBox}>
+            <Box
+              className={styles.quote}
+              sx={{ ".MuiTypography-root": { lineHeight: 0.9 } }}
+            >
+              <Typography
+                sx={{ fontSize: "5rem", fontWeight: 700, userSelect: "none" }}
               >
-                <Typography
-                  sx={{ fontSize: "5rem", fontWeight: 700, userSelect: "none" }}
-                >
-                  “
-                </Typography>
-                <Box className={styles.texto}>{d.description}</Box>
-              </Box>
-              <Box className={styles.autor}>— {d.autor}</Box>
-              <Box className={styles.empresa}>{d.empresa}</Box>
+                “
+              </Typography>
+              <Box className={styles.texto}>{d.description}</Box>
             </Box>
-          )}
-        />
-      </Box>
+            <Box className={styles.autor}>— {d.autor}</Box>
+            <Box className={styles.empresa}>{d.empresa}</Box>
+          </Box>
+        )}
+      />
     </Section>
   );
 };
