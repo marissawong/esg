@@ -55,7 +55,7 @@ const time = [
     lastName: "Sampaio",
     src: mario,
     description:
-      "Dourando em Administração de Empresas pela Universidade de Rosário, atua como consultor e head de projetos da PEX - Portfolio Expert, empresa especializada em gerenciamento de projetos, programas e portfólios. Há mais de 33 anos, atua como executivo e consultor em Gerenciamento Profissional de Projetos.",
+      "Doutorando em Administração de Empresas pela Universidade de Rosário, atua como consultor e head de projetos da PEX - Portfolio Expert, empresa especializada em gerenciamento de projetos, programas e portfólios. Há mais de 33 anos, atua como executivo e consultor em Gerenciamento Profissional de Projetos.",
     subtitle: "mario@esgenergia.com",
     linkedin: "mario-luis-sampaio-pereira-4ba369184",
     phone: "21999944784",

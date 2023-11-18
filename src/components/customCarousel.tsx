@@ -6,22 +6,21 @@ interface CustomCarouselProps extends CarouselProps {
   boxClassName?: string;
 }
 
-const breakpoints = [
-  { breakpoint: 500, numVisible: 1, numScroll: 1 },
-  { breakpoint: 1000, numVisible: 2, numScroll: 1 },
-  { breakpoint: 1400, numVisible: 3, numScroll: 1 },
+const breakpoints = [850, 1200, 1400];
+
+const responsiveOptions = [
+  { breakpoint: breakpoints[0], numVisible: 1, numScroll: 1 },
+  { breakpoint: breakpoints[1], numVisible: 2, numScroll: 1 },
+  { breakpoint: breakpoints[2], numVisible: 3, numScroll: 1 },
 ];
 
 const getWidth = () => {
   const windowWidth = window.innerWidth;
   let items = 1;
 
-  if (windowWidth <= 500) {
-    items = breakpoints.find((b) => b.breakpoint === 500)!.numVisible;
-  } else if (windowWidth <= 1000) {
-    items = breakpoints.find((b) => b.breakpoint === 1000)!.numVisible;
-  } else if (windowWidth <= 1400) {
-    items = breakpoints.find((b) => b.breakpoint === 1400)!.numVisible;
+  const bOptions = responsiveOptions.find((b) => windowWidth <= b.breakpoint);
+  if (bOptions) {
+    items = bOptions!.numVisible;
   } else {
     items = 4;
   }
