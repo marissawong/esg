@@ -1,10 +1,9 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import { Box, Stack } from "@mui/material";
+import { Box, Grid, Stack } from "@mui/material";
 import { FC } from "react";
 import arthur from "./../assets/time/arthur.jpg";
 import diego from "./../assets/time/diego.jpeg";
-import mario from "./../assets/time/mario.jpeg";
 import rafael from "./../assets/time/rafael.jpg";
 import silla from "./../assets/time/silla.jpg";
 import styles from "./../styles/section.module.scss";
@@ -50,16 +49,6 @@ const time = [
     linkedin: "barreto-rafael",
     phone: "21983505292",
   },
-  {
-    name: "Mario",
-    lastName: "Sampaio",
-    src: mario,
-    description:
-      "Doutorando em Administração de Empresas pela Universidade de Rosário, atua como consultor e head de projetos da PEX - Portfolio Expert, empresa especializada em gerenciamento de projetos, programas e portfólios. Há mais de 33 anos, atua como executivo e consultor em Gerenciamento Profissional de Projetos.",
-    subtitle: "mario@esgenergia.com",
-    linkedin: "mario-luis-sampaio-pereira-4ba369184",
-    phone: "21999944784",
-  },
 ];
 
 export const Team: FC = () => {
@@ -72,46 +61,50 @@ export const Team: FC = () => {
           especialistas
         </Box>
       </Box>
-      {time.map((t, index) => (
-        <Box key={`team_${index}`} className={styles.person}>
-          <Box className={styles.mainInfo}>
-            <img src={t.src} alt={t.name} />
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                ml: "1rem",
-                alignItems: "start",
-              }}
-            >
-              <Box className={styles.name}>{t.name}</Box>
-              <Box className={styles.name}>{t.lastName}</Box>
-              <Box className={styles.personSubtitle}>{t.subtitle}</Box>
-              <Stack direction="row" gap={0.5} marginTop={0.5}>
-                <LinkedInIcon
-                  sx={{ fontSize: "1.2rem", cursor: "pointer" }}
-                  onClick={() =>
-                    window.open(
-                      `https://www.linkedin.com/in/${t.linkedin}/`,
-                      "_blank"
-                    )
-                  }
-                />
-                <WhatsAppIcon
-                  sx={{ fontSize: "1.2rem", cursor: "pointer" }}
-                  onClick={() =>
-                    window.open(
-                      `https://api.whatsapp.com/send?phone=55${t.phone}&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20ESG%20Energia%A1!`,
-                      "_blank"
-                    )
-                  }
-                />
-              </Stack>
+      <Grid container spacing={4}>
+        {time.map((t, index) => (
+          <Grid key={`team_${index}`} item xs={12} md={6}>
+            <Box className={styles.person}>
+              <Box className={styles.mainInfo}>
+                <img src={t.src} alt={t.name} />
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    ml: "1rem",
+                    alignItems: "start",
+                  }}
+                >
+                  <Box className={styles.name}>{t.name}</Box>
+                  <Box className={styles.name}>{t.lastName}</Box>
+                  <Box className={styles.personSubtitle}>{t.subtitle}</Box>
+                  <Stack direction="row" gap={0.5} marginTop={0.5}>
+                    <LinkedInIcon
+                      sx={{ fontSize: "1.2rem", cursor: "pointer" }}
+                      onClick={() =>
+                        window.open(
+                          `https://www.linkedin.com/in/${t.linkedin}/`,
+                          "_blank"
+                        )
+                      }
+                    />
+                    <WhatsAppIcon
+                      sx={{ fontSize: "1.2rem", cursor: "pointer" }}
+                      onClick={() =>
+                        window.open(
+                          `https://api.whatsapp.com/send?phone=55${t.phone}&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20ESG%20Energia%A1!`,
+                          "_blank"
+                        )
+                      }
+                    />
+                  </Stack>
+                </Box>
+              </Box>
+              <Box className={styles.description}>{t.description}</Box>
             </Box>
-          </Box>
-          <Box className={styles.description}>{t.description}</Box>
-        </Box>
-      ))}
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
 };
